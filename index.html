@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pragya Himanshu | Full Stack Software Engineer | Java | .NET | React</title>
+<meta name="description" content="Full Stack Software Engineer working with Java, .NET, React, SQL, APIs, cloud technologies, testing and system design.">
+<meta property="og:title" content="Pragya Himanshu | Full Stack Software Engineer">
+<meta property="og:description" content="Full Stack Software Engineer building reliable frontend, backend, API and database solutions with Java, .NET, React and SQL.">
+<meta property="og:type" content="website">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--cyan:#00f5ff;
+--purple:#bf00ff;
+--bg:#050510;
+--bg2:#0a0a1a;
+--bg3:#0d0d20;
+--text:#e0e0ff;
+--text2:#a0a0cc;
+}
+html{scroll-behavior:smooth}
+body{
+background:var(--bg);
+color:var(--text);
+font-family:'Segoe UI',sans-serif;
+overflow-x:hidden;
+}
+
+/* GRID BG */
+body::before{
+content:'';
+position:fixed;
+top:0;left:0;right:0;bottom:0;
+background-image:
+linear-gradient(rgba(0,245,255,0.03) 1px,transparent 1px),
+linear-gradient(90deg,rgba(0,245,255,0.03) 1px,transparent 1px);
+background-size:50px 50px;
+pointer-events:none;
+z-index:0;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:2px}
+
+/* NAV */
+nav{
+position:fixed;top:0;left:0;right:0;z-index:100;
+display:flex;justify-content:space-between;align-items:center;
+padding:1rem 3rem;
+background:rgba(5,5,16,0.9);
+border-bottom:1px solid rgba(0,245,255,0.1);
+backdrop-filter:blur(10px);
+}
+.nav-logo{
+font-family:monospace;
+font-size:1.1rem;
+color:var(--cyan);
+text-shadow:0 0 10px var(--cyan);
+text-decoration:none;
+}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{
+color:var(--text2);
+text-decoration:none;
+font-size:0.85rem;
+letter-spacing:0.05em;
+transition:all 0.3s;
+position:relative;
+}
+.nav-links a::after{
+content:'';
+position:absolute;bottom:-4px;left:0;width:0;height:1px;
+background:var(--cyan);
+transition:width 0.3s;
+box-shadow:0 0 6px var(--cyan);
+}
+.nav-links a:hover{color:var(--cyan)}
+.nav-links a:hover::after{width:100%}
+
+/* HERO */
+.hero{
+min-height:100vh;
+display:flex;align-items:center;
+padding:6rem 3rem 4rem;
+position:relative;
+z-index:1;
+}
+.hero-content{max-width:800px}
+
+.hero-tag{
+font-family:monospace;
+font-size:0.85rem;
+color:var(--cyan);
+margin-bottom:1.5rem;
+display:flex;align-items:center;gap:0.5rem;
+}
+.blink{animation:blink 1s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+.hero-name{
+font-size:clamp(3rem,8vw,6rem);
+font-weight:900;
+line-height:1;
+color:#fff;
+margin-bottom:0.5rem;
+text-shadow:0 0 30px rgba(0,245,255,0.3);
+letter-spacing:-0.02em;
+}
+
+.hero-role{
+font-size:clamp(1.2rem,3vw,1.8rem);
+color:var(--cyan);
+font-family:monospace;
+margin-bottom:1.5rem;
+text-shadow:0 0 15px var(--cyan);
+min-height:2.2rem;
+}
+
+.hero-desc{
+font-size:1rem;
+color:var(--text2);
+max-width:600px;
+line-height:1.8;
+margin-bottom:2.5rem;
+}
+
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+
+.btn{
+padding:0.75rem 1.75rem;
+border-radius:4px;
+font-size:0.9rem;
+font-weight:600;
+text-decoration:none;
+transition:all 0.3s;
+letter-spacing:0.05em;
+cursor:pointer;
+border:none;
+}
+.btn-neon{
+background:transparent;
+color:var(--cyan);
+border:1px solid var(--cyan);
+box-shadow:0 0 10px rgba(0,245,255,0.2),inset 0 0 10px rgba(0,245,255,0.05);
+}
+.btn-neon:hover{
+background:rgba(0,245,255,0.1);
+box-shadow:0 0 20px rgba(0,245,255,0.4),inset 0 0 20px rgba(0,245,255,0.1);
+transform:translateY(-2px);
+}
+.btn-purple{
+background:transparent;
+color:var(--purple);
+border:1px solid var(--purple);
+box-shadow:0 0 10px rgba(191,0,255,0.2);
+}
+.btn-purple:hover{
+background:rgba(191,0,255,0.1);
+box-shadow:0 0 20px rgba(191,0,255,0.4);
+transform:translateY(-2px);
+}
+
+.hero-stats{display:flex;gap:3rem;flex-wrap:wrap}
+.stat{}
+.stat-num{
+font-size:2rem;font-weight:800;
+color:#fff;font-family:monospace;
+text-shadow:0 0 15px var(--cyan);
+}
+.stat-label{font-size:0.75rem;color:var(--text2);letter-spacing:0.05em}
+
+/* SECTION */
+section{
+max-width:1100px;margin:0 auto;
+padding:5rem 3rem;
+position:relative;z-index:1;
+}
+.section-tag{
+font-family:monospace;font-size:0.75rem;
+color:var(--cyan);letter-spacing:0.15em;
+margin-bottom:0.5rem;
+}
+.section-title{
+font-size:clamp(1.8rem,4vw,2.5rem);
+font-weight:800;color:#fff;
+margin-bottom:3rem;
+}
+.section-title span{
+color:var(--cyan);
+text-shadow:0 0 15px var(--cyan);
+}
+.divider{
+width:100%;height:1px;
+background:linear-gradient(90deg,transparent,rgba(0,245,255,0.3),transparent);
+margin:0 3rem;
+}
+
+/* EXPERIENCE */
+.exp-item{
+display:grid;grid-template-columns:200px 1fr;gap:2rem;
+padding:2rem 0;
+border-bottom:1px solid rgba(0,245,255,0.05);
+}
+.exp-item:last-child{border-bottom:none}
+.exp-left{}
+.exp-company{font-weight:700;color:#fff;font-size:0.95rem;margin-bottom:0.25rem}
+.exp-date{font-family:monospace;font-size:0.75rem;color:var(--cyan)}
+.exp-loc{font-size:0.75rem;color:var(--text2);margin-top:0.25rem}
+.exp-role{
+font-size:1rem;font-weight:700;
+color:var(--cyan);
+text-shadow:0 0 10px rgba(0,245,255,0.4);
+margin-bottom:1rem;
+}
+.exp-bullets{list-style:none}
+.exp-bullets li{
+color:var(--text2);font-size:0.875rem;
+padding:0.3rem 0 0.3rem 1.2rem;
+position:relative;line-height:1.6;
+}
+.exp-bullets li::before{
+content:'▸';position:absolute;left:0;
+color:var(--cyan);font-size:0.7rem;top:0.45rem;
+}
+
+/* ABOUT */
+.about-grid{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:2rem;
+  align-items:start;
+}
+.about-text{
+  color:var(--text2);
+  line-height:1.8;
+  font-size:0.97rem;
+}
+.about-text p{margin-bottom:1rem}
+.about-pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.6rem;
+  margin-top:1.25rem;
+}
+.about-pill{
+  background:rgba(0,245,255,0.06);
+  border:1px solid rgba(0,245,255,0.2);
+  border-radius:999px;
+  padding:0.38rem 0.8rem;
+  font-size:0.72rem;
+  color:var(--cyan);
+  font-family:monospace;
+}
+.info-stack{
+  background:var(--bg2);
+  border:1px solid rgba(0,245,255,0.1);
+  border-radius:12px;
+  padding:1.5rem;
+}
+.info-stack h3{
+  color:#fff;
+  font-size:1rem;
+  margin-bottom:1rem;
+}
+.info-list{list-style:none;display:grid;gap:0.8rem}
+.info-list li{
+  color:var(--text2);
+  font-size:0.82rem;
+  line-height:1.6;
+  padding-left:1rem;
+  position:relative;
+}
+.info-list li::before{
+  content:'▸';
+  position:absolute;
+  left:0;
+  color:var(--cyan);
+}
+
+/* FEATURE CARDS */
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.25rem;
+  margin-top:2rem;
+}
+.feature-card{
+  background:var(--bg2);
+  border:1px solid rgba(0,245,255,0.1);
+  border-radius:10px;
+  padding:1.5rem;
+  transition:all 0.3s;
+}
+.feature-card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(0,245,255,0.35);
+  box-shadow:0 0 20px rgba(0,245,255,0.08);
+}
+.feature-card h3{
+  font-size:1rem;
+  color:#fff;
+  margin-bottom:0.75rem;
+}
+.feature-card p{
+  color:var(--text2);
+  font-size:0.83rem;
+  line-height:1.7;
+}
+
+/* SYSTEM DESIGN */
+.system-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.25rem;
+}
+.system-card{
+  background:var(--bg2);
+  border:1px solid rgba(0,245,255,0.12);
+  border-radius:12px;
+  padding:1.25rem;
+}
+.system-card .label{
+  font-family:monospace;
+  color:var(--cyan);
+  font-size:0.72rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  margin-bottom:0.75rem;
+}
+.system-card h3{
+  color:#fff;
+  font-size:1rem;
+  margin-bottom:0.7rem;
+}
+.system-card p{color:var(--text2);font-size:0.83rem;line-height:1.7}
+
+/* API BOX */
+.api-box{
+  background:rgba(10,10,26,0.95);
+  border:1px solid rgba(0,245,255,0.15);
+  border-radius:12px;
+  padding:1.25rem;
+  font-family:monospace;
+  color:#dfeaff;
+  line-height:1.8;
+  overflow:auto;
+}
+.api-box .method{color:var(--cyan);font-weight:700}
+.api-box .key{color:#8edbff}
+.api-box .value{color:#d9e2ff}
+
+/* DSA */
+.dsa-grid{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem}
+.dsa-chip{
+  border:1px solid rgba(0,245,255,0.2);
+  background:rgba(0,245,255,0.05);
+  color:var(--text);
+  padding:0.4rem 0.7rem;
+  border-radius:999px;
+  font-size:0.75rem;
+}
+
+/* PROJECTS */
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+gap:1.5rem;
+}
+.project-card{
+background:var(--bg2);
+border:1px solid rgba(0,245,255,0.1);
+border-radius:8px;padding:1.75rem;
+transition:all 0.3s;
+position:relative;overflow:hidden;
+}
+.project-card::before{
+content:'';
+position:absolute;top:0;left:0;right:0;height:1px;
+background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+opacity:0;transition:opacity 0.3s;
+}
+.project-card:hover{
+border-color:rgba(0,245,255,0.4);
+box-shadow:0 0 30px rgba(0,245,255,0.1);
+transform:translateY(-4px);
+}
+.project-card:hover::before{opacity:1}
+.project-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem}
+.project-icon{
+width:40px;height:40px;
+border:1px solid rgba(0,245,255,0.3);
+border-radius:6px;
+display:flex;align-items:center;justify-content:center;
+font-size:1.2rem;
+box-shadow:0 0 10px rgba(0,245,255,0.1);
+}
+.project-links{display:flex;gap:1rem}
+.project-link{
+color:var(--text2);text-decoration:none;
+font-size:0.8rem;font-family:monospace;
+transition:color 0.2s;
+border:1px solid rgba(255,255,255,0.1);
+padding:0.2rem 0.6rem;border-radius:3px;
+}
+.project-link:hover{color:var(--cyan);border-color:var(--cyan)}
+.project-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.75rem}
+.project-desc{font-size:0.85rem;color:var(--text2);line-height:1.6;margin-bottom:1rem}
+.project-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.tag{
+font-family:monospace;font-size:0.7rem;
+background:rgba(0,245,255,0.07);
+color:var(--cyan);
+border:1px solid rgba(0,245,255,0.15);
+padding:0.2rem 0.6rem;border-radius:3px;
+}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.skill-group{
+background:var(--bg2);
+border:1px solid rgba(0,245,255,0.1);
+border-radius:8px;padding:1.5rem;
+transition:border-color 0.3s;
+}
+.skill-group:hover{border-color:rgba(0,245,255,0.3)}
+.skill-group-title{
+font-family:monospace;font-size:0.75rem;
+color:var(--cyan);letter-spacing:0.1em;
+margin-bottom:1rem;text-transform:uppercase;
+}
+.chips{display:flex;flex-wrap:wrap;gap:0.5rem}
+.chip{
+font-size:0.8rem;
+background:rgba(255,255,255,0.03);
+color:var(--text2);
+border:1px solid rgba(255,255,255,0.08);
+padding:0.3rem 0.75rem;border-radius:20px;
+transition:all 0.2s;cursor:default;
+}
+.chip:hover{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 8px rgba(0,245,255,0.2)}
+
+/* CERTS */
+.certs-list{display:flex;flex-direction:column;gap:1rem}
+.cert-item{
+display:flex;align-items:center;gap:1rem;
+background:var(--bg2);
+border:1px solid rgba(0,245,255,0.1);
+border-radius:8px;padding:1rem 1.5rem;
+transition:all 0.3s;
+}
+.cert-item:hover{
+border-color:rgba(0,245,255,0.4);
+box-shadow:0 0 15px rgba(0,245,255,0.08);
+}
+.cert-badge{
+width:36px;height:36px;
+background:linear-gradient(135deg,#0078d4,#00bcf2);
+border-radius:6px;flex-shrink:0;
+display:flex;align-items:center;justify-content:center;
+font-size:0.75rem;font-weight:700;color:#fff;
+}
+.cert-info{flex:1}
+.cert-name{font-size:0.9rem;font-weight:600;color:#fff}
+.cert-org{font-size:0.75rem;color:var(--text2)}
+.cert-date{font-family:monospace;font-size:0.75rem;color:var(--cyan)}
+
+/* CONTACT */
+.contact-box{
+background:var(--bg2);
+border:1px solid rgba(0,245,255,0.2);
+border-radius:12px;padding:3rem;
+text-align:center;
+box-shadow:0 0 40px rgba(0,245,255,0.05);
+position:relative;overflow:hidden;
+}
+.contact-box::before{
+content:'';
+position:absolute;top:0;left:0;right:0;height:1px;
+background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+}
+.contact-box h3{font-size:2rem;font-weight:800;color:#fff;margin-bottom:1rem}
+.contact-box p{color:var(--text2);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+.contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.contact-link{
+display:flex;align-items:center;gap:0.5rem;
+padding:0.75rem 1.25rem;
+background:transparent;
+border:1px solid rgba(0,245,255,0.2);
+border-radius:6px;
+color:var(--text2);text-decoration:none;
+font-size:0.875rem;font-family:monospace;
+transition:all 0.3s;
+}
+.contact-link:hover{
+border-color:var(--cyan);color:var(--cyan);
+box-shadow:0 0 15px rgba(0,245,255,0.2);
+}
+
+/* FOOTER */
+footer{
+border-top:1px solid rgba(0,245,255,0.1);
+text-align:center;padding:2rem;
+color:var(--text2);font-size:0.8rem;
+font-family:monospace;
+position:relative;z-index:1;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+nav{padding:1rem}
+.nav-links{display:none}
+.hero{padding:5rem 1.5rem 3rem}
+section{padding:3rem 1.5rem}
+.exp-item{grid-template-columns:1fr;gap:0.5rem}
+.contact-box{padding:2rem 1.5rem}
+.hero-stats{gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">PH.dev</a>
+  <ul class="nav-links">
+    <li><a href="#home">home</a></li>
+    <li><a href="#about">about</a></li>
+    <li><a href="#experience">experience</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#system-design">system design</a></li>
+    <li><a href="#dsa">dsa</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span style="color:var(--cyan)">// </span>
+      full stack software engineer
+      <span class="blink" style="color:var(--cyan);font-size:1rem">▮</span>
+    </div>
+    <h1 class="hero-name">FULL STACK<br>SOFTWARE ENGINEER</h1>
+    <div class="hero-role" id="typewriter"></div>
+    <p class="hero-desc">
+      Building scalable applications across React, Java, .NET, SQL, APIs and modern software architecture.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-neon">view projects →</a>
+      <a href="#skills" class="btn btn-purple">view skills →</a>
+      <a href="#experience" class="btn btn-neon">view experience →</a>
+      <a href="#contact" class="btn btn-purple">contact me →</a>
+      <a href="https://github.com/pragyahimanshu" target="_blank" class="btn btn-neon">github →</a>
+      <a href="https://www.linkedin.com/in/pragyahimanshu-69099a1b8" target="_blank" class="btn btn-purple">linkedin →</a>
+      <a href="#contact" class="btn btn-neon">resume →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">1+</div>
+        <div class="stat-label">years experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Java</div>
+        <div class="stat-label">backend strength</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">.NET</div>
+        <div class="stat-label">api + services</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">SQL</div>
+        <div class="stat-label">database mindset</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-tag">// 01 — about</div>
+  <h2 class="section-title">About<span>.</span></h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I am a Full Stack Software Engineer who enjoys working across the complete application stack — from frontend interfaces and user flows to backend APIs, databases and scalable system design.</p>
+      <p>My work spans React and modern frontend development, Java and .NET backend engineering, SQL and database optimization, API integration, testing, caching, and architecture thinking. I care about clean implementation, maintainability, performance, and building systems that are reliable as well as user-friendly.</p>
+      <p>My background includes production-oriented work with React.js, ASP.NET Core, C#, SQL Server, Power BI integrations, Azure services, API testing, and performance optimizations. I also actively build and study concepts around system design, distributed systems, caching, scaling, and modern engineering practices.</p>
+      <div class="about-pills">
+        <span class="about-pill">Frontend</span>
+        <span class="about-pill">Backend</span>
+        <span class="about-pill">Java</span>
+        <span class="about-pill">.NET</span>
+        <span class="about-pill">React</span>
+        <span class="about-pill">SQL</span>
+        <span class="about-pill">APIs</span>
+        <span class="about-pill">System Design</span>
+      </div>
+    </div>
+    <div class="info-stack">
+      <h3>Core Focus</h3>
+      <ul class="info-list">
+        <li>Frontend: React, JavaScript, TypeScript, Angular, HTML, CSS</li>
+        <li>Backend: Java, C#, ASP.NET Core, .NET, REST APIs</li>
+        <li>Database: SQL Server, T-SQL, stored procedures, indexing, query optimization</li>
+        <li>Engineering: OOP, SOLID, Clean Architecture, Repository Pattern, CQRS</li>
+        <li>Performance: Caching, Redis, pagination, API optimization</li>
+        <li>Testing: Playwright, API testing, E2E testing, regression checks</li>
+        <li>Cloud: Azure, Azure Key Vault, Azure Communication Services</li>
+        <li>Architecture: System design, load balancing, caching, scalability concepts</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-tag">// 01 — work history</div>
+  <h2 class="section-title">Experience<span>.</span></h2>
+
+  <div class="exp-item">
+    <div class="exp-left">
+      <div class="exp-company">MAQ Software</div>
+      <div class="exp-date">Oct 2025 — Sep 2026</div>
+      <div class="exp-loc">Noida, India</div>
+    </div>
+    <div>
+      <div class="exp-role">Associate Software Engineer</div>
+      <ul class="exp-bullets">
+        <li>Shipped end-to-end features for a production SaaS Power BI performance testing platform using React.js, ASP.NET Core Web API, C#, Entity Framework Core, and SQL Server.</li>
+        <li>Integrated Power BI report APIs with React.js — enabling hierarchy slicers, bookmarks, page navigation, and seamless state management across report transitions.</li>
+        <li>Engineered a configuration-driven React guided walkthrough with dynamic steps, validation-based navigation, and dynamic tooltip/spotlight positioning.</li>
+        <li>Reduced API response times by 40% via in-memory caching, cache invalidation, stored-procedure retrieval, and SQL query tuning.</li>
+        <li>Automated execution-summary email workflows using ASP.NET Core, Azure Communication Services, and Azure Key Vault; validated through unit, API, and E2E tests.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-left">
+      <div class="exp-company">InternPe</div>
+      <div class="exp-date">Aug 2023 — Sep 2023</div>
+      <div class="exp-loc">Remote</div>
+    </div>
+    <div>
+      <div class="exp-role">Java Programming Intern</div>
+      <ul class="exp-bullets">
+        <li>Delivered Java-based project modules applying OOP fundamentals; executed debugging and testing protocols to improve software reliability.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-left">
+      <div class="exp-company">YBI Foundation</div>
+      <div class="exp-date">Jul 2023 — Sep 2023</div>
+      <div class="exp-loc">Remote</div>
+    </div>
+    <div>
+      <div class="exp-role">Python Developer</div>
+      <ul class="exp-bullets">
+        <li>Completed the Master 4.0 Python Live Certificate Course, building practical Python programming skills through live, project-based sessions.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SIDE PROJECTS -->
+<section id="side-projects">
+  <div class="section-tag">// 02 — side projects & startup builds</div>
+  <h2 class="section-title">Side Projects<span>.</span></h2>
+
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-icon">🛍️</div>
+      </div>
+      <div class="project-title">Shop & Small Business Solutions</div>
+      <div class="project-desc">Built multiple digital storefronts, landing pages, and conversion-focused web experiences for local shops, service businesses, and early-stage startups to help them launch faster and sell better online.</div>
+      <div class="project-tags">
+        <span class="tag">React.js</span>
+        <span class="tag">UI/UX</span>
+        <span class="tag">Startup MVP</span>
+        <span class="tag">Business Websites</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-icon">🚀</div>
+      </div>
+      <div class="project-title">Startup MVPs</div>
+      <div class="project-desc">Created concept validation apps, dashboards, and product prototypes for startup ideas, focusing on rapid iteration, clean UX, and scalable frontend-backend architecture.</div>
+      <div class="project-tags">
+        <span class="tag">MVP</span>
+        <span class="tag">Product Design</span>
+        <span class="tag">Full Stack</span>
+        <span class="tag">Rapid Prototyping</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-icon">📈</div>
+      </div>
+      <div class="project-title">Growth-Focused Builds</div>
+      <div class="project-desc">Developed lead-generation websites, showcase platforms, and niche tools for businesses that needed a polished online presence, better user engagement, and faster digital visibility.</div>
+      <div class="project-tags">
+        <span class="tag">Landing Pages</span>
+        <span class="tag">Lead Gen</span>
+        <span class="tag">SEO Basics</span>
+        <span class="tag">Branding</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-tag">// 03 — what i've built</div>
+  <h2 class="section-title">Projects<span>.</span></h2>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-icon">⚡</div>
+        <div class="project-links">
+          <a href="https://github.com/pragyahimanshu/CacheOptimizerPro" target="_blank" class="project-link">GitHub</a>
+          <a href="https://frontend-flame-mu-51.vercel.app/" target="_blank" class="project-link">Live</a>
+        </div>
+      </div>
+      <div class="project-title">Distributed Caching System</div>
+      <div class="project-desc">High-performance caching with Cache-Aside & Write-Through strategies, Redis Pub/Sub invalidation. Live dashboard tracking cache hits, misses, and response times.</div>
+      <div class="project-tags">
+        <span class="tag">.NET 9</span>
+        <span class="tag">Redis</span>
+        <span class="tag">React.js</span>
+        <span class="tag">CQRS</span>
+        <span class="tag">SQL Server</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-icon">🎬</div>
+        <div class="project-links">
+          <a href="https://github.com/pragyahimanshu/HajiBI" target="_blank" class="project-link">GitHub</a>
+          <a href="https://hajibistreamplatform.vercel.app/signup" target="_blank" class="project-link">Live</a>
+        </div>
+      </div>
+      <div class="project-title">HajiBI Streaming Platform</div>
+      <div class="project-desc">Movie & TV discovery platform with trending content, advanced search, personalized recommendations via TMDB API. Firebase auth and watchlists.</div>
+      <div class="project-tags">
+        <span class="tag">React.js</span>
+        <span class="tag">ASP.NET</span>
+        <span class="tag">Firebase</span>
+        <span class="tag">TMDB API</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-icon">🚇</div>
+        <div class="project-links">
+          <a href="https://github.com/pragyahimanshu/THE-PATNA-METRO-APP-V2" target="_blank" class="project-link">GitHub</a>
+          <a href="https://patna-metro-app.vercel.app/" target="_blank" class="project-link">Live</a>
+        </div>
+      </div>
+      <div class="project-title">Patna Metro Navigator</div>
+      <div class="project-desc">Metro route-finding app using Dijkstra's algorithm in Java. Optimal route, minimum stops, and fare calculation between stations.</div>
+      <div class="project-tags">
+        <span class="tag">React.js</span>
+        <span class="tag">Java</span>
+        <span class="tag">Dijkstra</span>
+        <span class="tag">DSA</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-icon">📊</div>
+        <div class="project-links">
+          <a href="https://github.com/pragyahimanshu/Real-Time-Consumer-Spend-Analysis-Using-SQL" target="_blank" class="project-link">GitHub</a>
+        </div>
+      </div>
+      <div class="project-title">Consumer Spend Analysis</div>
+      <div class="project-desc">Real-time SQL analysis on Kaggle credit-card dataset — city-wise, category-wise, and gender-based spending patterns using advanced T-SQL.</div>
+      <div class="project-tags">
+        <span class="tag">SQL Server</span>
+        <span class="tag">T-SQL</span>
+        <span class="tag">CTEs</span>
+        <span class="tag">Window Functions</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-tag">// 04 — technical strengths</div>
+  <h2 class="section-title">Skills<span>.</span></h2>
+
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Programming Languages</div>
+      <div class="chips">
+        <span class="chip">Java</span>
+        <span class="chip">C#</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">TypeScript</span>
+        <span class="chip">SQL</span>
+        <span class="chip">C</span>
+        <span class="chip">C++</span>
+        <span class="chip">HTML5</span>
+        <span class="chip">CSS3</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Frontend Development</div>
+      <div class="chips">
+        <span class="chip">React.js</span>
+        <span class="chip">Redux Toolkit</span>
+        <span class="chip">React Router</span>
+        <span class="chip">React Hook Form</span>
+        <span class="chip">Angular</span>
+        <span class="chip">Vite</span>
+        <span class="chip">Responsive Design</span>
+        <span class="chip">State Management</span>
+        <span class="chip">API Integration</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Backend & API Development</div>
+      <div class="chips">
+        <span class="chip">Java</span>
+        <span class="chip">ASP.NET Core</span>
+        <span class="chip">.NET</span>
+        <span class="chip">C#</span>
+        <span class="chip">ASP.NET MVC</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Web APIs</span>
+        <span class="chip">Entity Framework Core</span>
+        <span class="chip">Dependency Injection</span>
+        <span class="chip">Middleware</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Database & SQL</div>
+      <div class="chips">
+        <span class="chip">SQL Server</span>
+        <span class="chip">T-SQL</span>
+        <span class="chip">Stored Procedures</span>
+        <span class="chip">CTEs</span>
+        <span class="chip">Window Functions</span>
+        <span class="chip">Indexing</span>
+        <span class="chip">Query Optimization</span>
+        <span class="chip">Pagination</span>
+        <span class="chip">Keyset Pagination</span>
+        <span class="chip">Relational Design</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Software Engineering</div>
+      <div class="chips">
+        <span class="chip">OOP</span>
+        <span class="chip">SOLID</span>
+        <span class="chip">Clean Architecture</span>
+        <span class="chip">Repository Pattern</span>
+        <span class="chip">CQRS</span>
+        <span class="chip">Dependency Injection</span>
+        <span class="chip">Separation of Concerns</span>
+        <span class="chip">Service Layer</span>
+        <span class="chip">Spec-Driven Development</span>
+        <span class="chip">Agile</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">System Design & Architecture</div>
+      <div class="chips">
+        <span class="chip">System Design Knowledge</span>
+        <span class="chip">DNS</span>
+        <span class="chip">TCP / UDP</span>
+        <span class="chip">TLS / HTTPS</span>
+        <span class="chip">Load Balancing</span>
+        <span class="chip">Caching</span>
+        <span class="chip">Redis</span>
+        <span class="chip">Message Queues</span>
+        <span class="chip">Pub/Sub</span>
+        <span class="chip">Read Replicas</span>
+        <span class="chip">CDN</span>
+        <span class="chip">Auto Scaling</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Testing & Quality</div>
+      <div class="chips">
+        <span class="chip">Playwright</span>
+        <span class="chip">API Testing</span>
+        <span class="chip">E2E Testing</span>
+        <span class="chip">Unit Testing</span>
+        <span class="chip">Integration Testing</span>
+        <span class="chip">Regression Testing</span>
+        <span class="chip">Authentication Testing</span>
+        <span class="chip">Authorization Testing</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Cloud & Enterprise</div>
+      <div class="chips">
+        <span class="chip">Azure</span>
+        <span class="chip">Power BI</span>
+        <span class="chip">Azure Key Vault</span>
+        <span class="chip">Communication Services</span>
+        <span class="chip">Secure Config</span>
+        <span class="chip">API Gateway Concepts</span>
+        <span class="chip">Rate Limiting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT I CAN BUILD -->
+<section>
+  <div class="section-tag">// 04 — what i can build</div>
+  <h2 class="section-title">What I Can Build<span>.</span></h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>Frontend Applications</h3>
+      <p>Responsive React interfaces, state management, API-driven workflows, and polished user experiences for business and product teams.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Backend Systems</h3>
+      <p>Java and .NET APIs, business logic layers, service architecture, authentication flows, and robust application services.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Database Systems</h3>
+      <p>SQL Server design, stored procedures, performance tuning, indexing, pagination, and query optimization for real-world data problems.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Distributed Features</h3>
+      <p>Redis-based caching, async processing, queue-based decoupling, and scalable patterns for systems with growth and spikes.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Testing</h3>
+      <p>Automated API checks, end-to-end validation, regression coverage, and quality-focused engineering improvements.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Cloud & Enterprise</h3>
+      <p>Azure integrations, secure configuration, SaaS product work, and platform-aware application design for production environments.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SYSTEM DESIGN -->
+<section id="system-design">
+  <div class="section-tag">// 05 — system design & architecture</div>
+  <h2 class="section-title">System Design & Architecture<span>.</span></h2>
+  <div class="system-grid">
+    <div class="system-card">
+      <div class="label">Networking</div>
+      <h3>Request Lifecycle</h3>
+      <p>DNS, TCP, TLS, HTTP routing and secure request flow are core concepts I study and apply in architecture discussions.</p>
+    </div>
+    <div class="system-card">
+      <div class="label">Traffic</div>
+      <h3>Load Balancing</h3>
+      <p>L4 and L7 traffic management, API gateways, reverse proxies, and request distribution are important parts of scalable system design.</p>
+    </div>
+    <div class="system-card">
+      <div class="label">Scalability</div>
+      <h3>Scale Out</h3>
+      <p>Horizontal scaling, auto-scaling, read replicas, caching layers, and decoupled services help maintain performance under load.</p>
+    </div>
+    <div class="system-card">
+      <div class="label">Async</div>
+      <h3>Queue + Worker</h3>
+      <p>Message queues, fan-out patterns, backpressure handling, and worker-driven processing are powerful for async workloads.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- API ENGINEERING -->
+<section>
+  <div class="section-tag">// 06 — api engineering</div>
+  <h2 class="section-title">API Engineering<span>.</span></h2>
+  <div class="api-box">
+    <div><span class="method">GET</span> /api/users?page=1</div>
+    <div><span class="key">Headers:</span> <span class="value">Authorization: Bearer &lt;token&gt;</span></div>
+    <div><span class="key">Content-Type:</span> <span class="value">application/json</span></div>
+    <div><span class="key">Response:</span> <span class="value">200 OK</span></div>
+    <div><span class="key">Notes:</span> <span class="value">REST, HTTP status handling, request validation, pagination, auth, rate limiting, and response consistency.</span></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DSA -->
+<section id="dsa">
+  <div class="section-tag">// 07 — dsa & problem solving</div>
+  <h2 class="section-title">DSA & Problem Solving<span>.</span></h2>
+  <div class="dsa-grid">
+    <span class="dsa-chip">Arrays</span>
+    <span class="dsa-chip">Strings</span>
+    <span class="dsa-chip">Searching</span>
+    <span class="dsa-chip">Sorting</span>
+    <span class="dsa-chip">Hashing</span>
+    <span class="dsa-chip">Recursion</span>
+    <span class="dsa-chip">Linked Lists</span>
+    <span class="dsa-chip">Stack</span>
+    <span class="dsa-chip">Queue</span>
+    <span class="dsa-chip">Trees</span>
+    <span class="dsa-chip">Graphs</span>
+    <span class="dsa-chip">BFS</span>
+    <span class="dsa-chip">DFS</span>
+    <span class="dsa-chip">Dijkstra</span>
+    <span class="dsa-chip">Shortest Path</span>
+    <span class="dsa-chip">Time Complexity</span>
+    <span class="dsa-chip">Space Complexity</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-tag">// 08 — credentials</div>
+  <h2 class="section-title">Certifications<span>.</span></h2>
+
+  <div class="certs-list">
+    <div class="cert-item">
+      <div class="cert-badge">MS</div>
+      <div class="cert-info">
+        <div class="cert-name">Microsoft Certified: Fabric Data Engineer Associate</div>
+        <div class="cert-org">Microsoft</div>
+      </div>
+      <div class="cert-date">Jul 2026</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge">MS</div>
+      <div class="cert-info">
+        <div class="cert-name">Microsoft Certified: AI Agent Builder Associate</div>
+        <div class="cert-org">Microsoft</div>
+      </div>
+      <div class="cert-date">Jun 2026</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge">MS</div>
+      <div class="cert-info">
+        <div class="cert-name">Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)</div>
+        <div class="cert-org">Microsoft</div>
+      </div>
+      <div class="cert-date">Mar 2026</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge" style="background:linear-gradient(135deg,#1ba94c,#23d160)">HR</div>
+      <div class="cert-info">
+        <div class="cert-name">SQL for Data Management – Basic & Intermediate</div>
+        <div class="cert-org">HackerRank</div>
+      </div>
+      <div class="cert-date">2024</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge" style="background:linear-gradient(135deg,#c5392a,#e8473a)">MQ</div>
+      <div class="cert-info">
+        <div class="cert-name">Web Development COE 101 (.NET, C#, JS, TS, HTML/CSS, Angular)</div>
+        <div class="cert-org">MAQ Software</div>
+      </div>
+      <div class="cert-date">2025</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge" style="background:linear-gradient(135deg,#1ba94c,#23d160)">HR</div>
+      <div class="cert-info">
+        <div class="cert-name">Java Programming Foundational Certificate</div>
+        <div class="cert-org">HackerRank</div>
+      </div>
+      <div class="cert-date">2023</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-box">
+    <h3>Let's build something<br><span style="color:var(--cyan);text-shadow:0 0 15px var(--cyan)">together.</span></h3>
+    <p>Open to Full Stack Developer, .NET Developer, and Software Engineer roles in Delhi NCR or Remote. Immediate joiner.</p>
+    <div class="contact-links">
+      <a href="mailto:pragyahimanshu201@gmail.com" class="contact-link">✉ Email</a>
+      <a href="tel:+918102970941" class="contact-link">📞 +91 8102970941</a>
+      <a href="https://www.linkedin.com/in/pragyahimanshu-69099a1b8" target="_blank" class="contact-link">💼 LinkedIn</a>
+      <a href="https://github.com/pragyahimanshu" target="_blank" class="contact-link">🐙 GitHub</a>
+      <a href="https://leetcode.com/u/pragya_himanshu/" target="_blank" class="contact-link">💻 LeetCode</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Pragya Himanshu — Full Stack Developer</p>
+</footer>
+
+<script>
+// TYPEWRITER
+const roles=['Java Developer','.NET Developer','React Developer','Backend Developer','Software Engineer','Full Stack Developer','SQL & Database Developer'];
+let ri=0,ci=0,del=false;
+const el=document.getElementById('typewriter');
+function type(){
+  const r=roles[ri];
+  if(!del){
+    el.textContent=r.slice(0,ci+1)+' ▮';
+    ci++;
+    if(ci===r.length){del=true;setTimeout(type,2000);return}
+  }else{
+    el.textContent=r.slice(0,ci-1)+' ▮';
+    ci--;
+    if(ci===0){del=false;ri=(ri+1)%roles.length}
+  }
+  setTimeout(type,del?50:100);
+}
+type();
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
